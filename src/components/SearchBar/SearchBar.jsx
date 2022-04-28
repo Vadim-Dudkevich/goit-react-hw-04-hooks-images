@@ -21,18 +21,17 @@ class SearchBar extends Component {
   handleFormSubmit = e => {
     e.preventDefault();
 
-    if (this.setState.searchInput.trim() === '') {
+    if (this.state.searchInput.trim() === '') {
       Notiflix.Notify.failure('Please enter a search term!');
       return;
     }
 
     this.props.onSubmit(this.state.searchInput);
   };
-
   render() {
     return (
       <header className={css.searchBar}>
-        <form nSubmit={this.handleFormSubmit} className={css.searchForm}>
+        <form onSubmit={this.handleFormSubmit} className={css.searchForm}>
           <button type="submit" className={css.searchForm_Button}>
             <IconContext.Provider
               value={{ style: { verticalAlign: 'middle' } }}
