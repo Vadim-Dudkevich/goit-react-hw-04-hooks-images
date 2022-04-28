@@ -26,5 +26,6 @@
 
 .button:hover,
 .button:focus {
-  background-color: #fbbd0f;
+  background-color: #fbbd0d;
+  opacity: 0.8;
 }
