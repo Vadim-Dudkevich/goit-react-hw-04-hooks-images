@@ -58,27 +58,6 @@ export default function App() {
     }
   }, [page, searchInput]);
 
-  //   if (nextPage > prevPage) {
-  //     this.setState({ isLoading: true });
-
-  //     fetchImg(nextQuery, nextPage)
-  //       .then(({ hits }) => {
-  //         const arrayOfImages = this.createArrayOfImages(hits);
-
-  //         this.setState(prevState => {
-  //           return { images: [...prevState.images, ...arrayOfImages] };
-  //         });
-  //         this.setState({
-  //           imagesOnPage: this.state.images.length,
-  //         });
-  //       })
-  //       .catch(error => {
-  //         this.setState({ error });
-  //       })
-  //       .finally(() => this.turnOffLoader());
-  //   }
-  // }
-
   const createArrayOfImages = data => {
     const arrayOfImages = data.map(element => ({
       tags: element.tags,
@@ -99,31 +78,6 @@ export default function App() {
     setPage(prevState => prevState + 1);
   };
 
-  // openModal = event => {
-  //   const currentLargeImgUrl = event.target.dataset.large;
-  //   const currentImgTags = event.target.alt;
-
-  //   this.setState({ currentLargeImgUrl, currentImgTags });
-  //   this.toggleModal();
-  // };
-
-  // toggleModal = () => {
-  //   this.setState(({ showModal }) => ({
-  //     showModal: !showModal,
-  //   }));
-  // };
-
-  // render() {
-  //   const {
-  //     images,
-  //     imagesOnPage,
-  //     totalHits,
-  //     isLoading,
-  //     showModal,
-  //     currentLargeImgUrl,
-  //     currentImgTags,
-  //   } = this.state;
-
   return (
     <div className={css.app}>
       <SearchBar onSubmit={formSubmitHandler} />
@@ -132,13 +86,6 @@ export default function App() {
       {images && images.length >= 12 && images.length < totalHits && (
         <Button onClick={nextFetch} />
       )}
-      {/* {showModal && (
-        <Modal
-          imgUrl={currentLargeImgUrl}
-          imgTags={currentImgTags}
-          onClose={this.toggleModal}
-        />
-      )} */}
     </div>
   );
 }
