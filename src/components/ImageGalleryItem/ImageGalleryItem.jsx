@@ -29,5 +29,5 @@ export default function ImageGalleryItem({ image }) {
 }
 
 ImageGalleryItem.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
 };
